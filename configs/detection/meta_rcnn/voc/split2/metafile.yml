@@ -1,0 +1,87 @@
+Collections:
+  - Name: Meta RCNN
+    Metadata:
+      Training Data: VOC
+      Training Techniques:
+        - SGD with Momentum
+        - Weight Decay
+      Training Resources: 8x V100 GPUs
+      Batch Size: 8x4
+      Architecture:
+        - RPN
+        - ResNet
+    Paper: https://arxiv.org/abs/2007.12107
+    README: configs/detection/meta_rcnn/README.md
+
+Models:
+  - Name: meta-rcnn_r101_c4_8xb4_voc-split2_base-training
+    In Collection: Meta RCNN
+    Config: configs/detection/meta_rcnn/voc/split2/meta-rcnn_r101_c4_8xb4_voc-split2_base-training.py
+    Metadata:
+      Training Data: VOC Split2 Base Classes
+    Results:
+      - Task: Few Shot Object Detection
+        Dataset: VOC Split2
+        Metrics:
+          base box AP: 73.3
+    Weights: https://download.openmmlab.com/mmfewshot/detection/meta_rcnn/voc/split2/meta-rcnn_r101_c4_8xb4_voc-split2_base-training_20211101_004034-03616bec.pth
+  - Name: meta-rcnn_r101_c4_8xb4_voc-split2_1shot-fine-tuning
+    In Collection: Meta RCNN
+    Config: configs/detection/meta_rcnn/voc/split2/meta-rcnn_r101_c4_8xb4_voc-split2_1shot-fine-tuning.py
+    Metadata:
+      Training Data: VOC Split2 1shot
+    Results:
+      - Task: Few Shot Object Detection
+        Dataset: VOC Split2
+        Metrics:
+          base box AP: 61.0
+          novel box AP: 27.3
+    Weights: https://download.openmmlab.com/mmfewshot/detection/meta_rcnn/voc/split2/meta-rcnn_r101_c4_8xb4_voc-split2_1shot-fine-tuning_20211111_184455-c0319926.pth
+  - Name: meta-rcnn_r101_c4_8xb4_voc-split2_2shot-fine-tuning
+    In Collection: Meta RCNN
+    Config: configs/detection/meta_rcnn/voc/split2/meta-rcnn_r101_c4_8xb4_voc-split2_2shot-fine-tuning.py
+    Metadata:
+      Training Data: VOC Split2 2shot
+    Results:
+      - Task: Few Shot Object Detection
+        Dataset: VOC Split2
+        Metrics:
+          base box AP: 69.5
+          novel box AP: 34.8
+    Weights: https://download.openmmlab.com/mmfewshot/detection/meta_rcnn/voc/split2/meta-rcnn_r101_c4_8xb4_voc-split2_2shot-fine-tuning_20211111_185215-c5807bb2.pth
+  - Name: meta-rcnn_r101_c4_8xb4_voc-split2_3shot-fine-tuning
+    In Collection: Meta RCNN
+    Config: configs/detection/meta_rcnn/voc/split2/meta-rcnn_r101_c4_8xb4_voc-split2_3shot-fine-tuning.py
+    Metadata:
+      Training Data: VOC Split2 3shot
+    Results:
+      - Task: Few Shot Object Detection
+        Dataset: VOC Split2
+        Metrics:
+          base box AP: 71.0
+          novel box AP: 39.0
+    Weights: https://download.openmmlab.com/mmfewshot/detection/meta_rcnn/voc/split2/meta-rcnn_r101_c4_8xb4_voc-split2_3shot-fine-tuning_20211111_190314-add8dbf5.pth
+  - Name: meta-rcnn_r101_c4_8xb4_voc-split2_5shot-fine-tuning
+    In Collection: Meta RCNN
+    Config: configs/detection/meta_rcnn/voc/split2/meta-rcnn_r101_c4_8xb4_voc-split2_5shot-fine-tuning.py
+    Metadata:
+      Training Data: VOC Split2 5shot
+    Results:
+      - Task: Few Shot Object Detection
+        Dataset: VOC Split2
+        Metrics:
+          base box AP: 71.7
+          novel box AP: 36.0
+    Weights: https://download.openmmlab.com/mmfewshot/detection/meta_rcnn/voc/split2/meta-rcnn_r101_c4_8xb4_voc-split2_5shot-fine-tuning_20211111_192028-61dcc52f.pth
+  - Name: meta-rcnn_r101_c4_8xb4_voc-split2_10shot-fine-tuning
+    In Collection: Meta RCNN
+    Config: configs/detection/meta_rcnn/voc/split2/meta-rcnn_r101_c4_8xb4_voc-split2_10shot-fine-tuning.py
+    Metadata:
+      Training Data: VOC Split2 10shot
+    Results:
+      - Task: Few Shot Object Detection
+        Dataset: VOC Split2
+        Metrics:
+          base box AP: 72.6
+          novel box AP: 40.1
+    Weights: https://download.openmmlab.com/mmfewshot/detection/meta_rcnn/voc/split2/meta-rcnn_r101_c4_8xb4_voc-split2_10shot-fine-tuning_20211111_193726-2bc2e6dc.pth

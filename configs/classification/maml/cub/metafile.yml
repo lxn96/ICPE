@@ -1,0 +1,59 @@
+Collections:
+  - Name: MAML
+    Metadata:
+      Training Data: CUB
+      Training Techniques:
+        - Adam
+      Training Resources: 1x V100 GPUs
+    Paper: https://arxiv.org/abs/1703.03400
+    README: configs/classification/maml/README.md
+
+Models:
+  - Name: maml_conv4_1xb105_cub_5way-1shot
+    Metadata:
+      Training Data: CUB
+      Batch Size: 105
+    In Collection: MAML
+    Results:
+      - Task: Few Shot Image Classification
+        Dataset: CUB
+        Metrics:
+          Accuracy: 60.32
+    Weights: https://download.openmmlab.com/mmfewshot/classification/maml/cub/maml_conv4_1xb105_cub_5way-1shot_20211031_125617-c00d532b.pth
+    Config: configs/classification/maml/cub/maml_conv4_1xb105_cub_5way-1shot.py
+  - Name: maml_conv4_1xb105_cub_5way-5shot
+    Metadata:
+      Training Data: CUB
+      Batch Size: 105
+    In Collection: MAML
+    Results:
+      - Task: Few Shot Image Classification
+        Dataset: CUB
+        Metrics:
+          Accuracy: 77.03
+    Weights: https://download.openmmlab.com/mmfewshot/classification/maml/cub/maml_conv4_1xb105_cub_5way-5shot_20211031_125919-48d15b7a.pth
+    Config: configs/classification/maml/cub/maml_conv4_1xb105_cub_5way-5shot.py
+  - Name: maml_resnet12_1xb105_cub_5way-1shot
+    Metadata:
+      Training Data: CUB
+      Batch Size: 105
+    In Collection: MAML
+    Results:
+      - Task: Few Shot Image Classification
+        Dataset: CUB
+        Metrics:
+          Accuracy: 70.44
+    Weights: https://download.openmmlab.com/mmfewshot/classification/maml/cub/maml_resnet12_1xb105_cub_5way-1shot_20211031_130240-542c4387.pth
+    Config: configs/classification/maml/cub/maml_resnet12_1xb105_cub_5way-1shot.py
+  - Name: maml_resnet12_1xb105_cub_5way-5shot
+    Metadata:
+      Training Data: CUB
+      Batch Size: 105
+    In Collection: MAML
+    Results:
+      - Task: Few Shot Image Classification
+        Dataset: CUB
+        Metrics:
+          Accuracy: 85.5
+    Weights: https://download.openmmlab.com/mmfewshot/classification/maml/cub/maml_resnet12_1xb105_cub_5way-5shot_20211031_130534-1de7c6d3.pth
+    Config: configs/classification/maml/cub/maml_resnet12_1xb105_cub_5way-5shot.py

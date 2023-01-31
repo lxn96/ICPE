@@ -1,0 +1,59 @@
+Collections:
+  - Name: Meta-Baseline
+    Metadata:
+      Training Data: CUB
+      Training Techniques:
+        - Adam
+      Training Resources: 1x V100 GPUs
+    Paper: https://arxiv.org/abs/2003.04390
+    README: configs/classification/meta_baseline/README.md
+
+Models:
+  - Name: meta-baseline_conv4_1xb100_cub_5way-1shot
+    Metadata:
+      Training Data: CUB
+      Batch Size: 100
+    In Collection: Meta-Baseline
+    Results:
+      - Task: Few Shot Image Classification
+        Dataset: CUB
+        Metrics:
+          Accuracy: 58.98
+    Weights: https://download.openmmlab.com/mmfewshot/classification/meta_baseline/cub/meta-baseline_conv4_1xb100_cub_5way-1shot_20211120_191622-bd94fc3c.pth
+    Config: configs/classification/meta_baseline/cub/meta-baseline_conv4_1xb100_cub_5way-1shot.py
+  - Name: meta-baseline_conv4_1xb100_cub_5way-5shot
+    Metadata:
+      Training Data: CUB
+      Batch Size: 100
+    In Collection: Meta-Baseline
+    Results:
+      - Task: Few Shot Image Classification
+        Dataset: CUB
+        Metrics:
+          Accuracy: 75.77
+    Weights: https://download.openmmlab.com/mmfewshot/classification/meta_baseline/cub/meta-baseline_conv4_1xb100_cub_5way-1shot_20211120_191622-bd94fc3c.pth
+    Config: configs/classification/meta_baseline/cub/meta-baseline_conv4_1xb100_cub_5way-5shot.py
+  - Name: meta-baseline_resnet12_1xb100_cub_5way-1shot
+    Metadata:
+      Training Data: CUB
+      Batch Size: 100
+    In Collection: Meta-Baseline
+    Results:
+      - Task: Few Shot Image Classification
+        Dataset: CUB
+        Metrics:
+          Accuracy: 78.16
+    Weights: https://download.openmmlab.com/mmfewshot/classification/meta_baseline/cub/meta-baseline_resnet12_1xb100_cub_5way-1shot_20211120_191622-8978c781.pth
+    Config: configs/classification/meta_baseline/cub/meta-baseline_resnet12_1xb100_cub_5way-1shot.py
+  - Name: meta-baseline_resnet12_1xb100_cub_5way-5shot
+    Metadata:
+      Training Data: CUB
+      Batch Size: 100
+    In Collection: Meta-Baseline
+    Results:
+      - Task: Few Shot Image Classification
+        Dataset: CUB
+        Metrics:
+          Accuracy: 90.4
+    Weights: https://download.openmmlab.com/mmfewshot/classification/meta_baseline/cub/meta-baseline_resnet12_1xb100_cub_5way-1shot_20211120_191622-8978c781.pth
+    Config: configs/classification/meta_baseline/cub/meta-baseline_resnet12_1xb100_cub_5way-5shot.py

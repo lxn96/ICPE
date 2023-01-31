@@ -1,0 +1,81 @@
+Collections:
+  - Name: Attention RPN
+    Metadata:
+      Training Data: VOC Split2
+      Training Techniques:
+        - SGD with Momentum
+        - Weight Decay
+      Training Resources: 8x V100 GPUs
+      Architecture:
+        - Attention RPN
+        - ResNet
+    Paper: https://arxiv.org/abs/1908.01998
+    README: configs/detection/attention_rpn/README.md
+
+Models:
+  - Name: attention-rpn_r50_c4_voc-split2_base-training
+    In Collection: Attention RPN
+    Config: configs/detection/attention_rpn/coco/attention-rpn_r50_c4_voc-split2_base-training.py
+    Metadata:
+      Training Data: VOC Split2 Base Classes
+    Results:
+      - Task: Few Shot Object Detection
+        Dataset: VOC
+        Metrics:
+          base box AP50: 73.5
+    Weights: https://download.openmmlab.com/mmfewshot/detection/attention_rpn/voc/split2/attention-rpn_r50_c4_voc-split2_base-training_20211101_040647-04570ae0.pth
+  - Name: attention_rpn_r50_c4_voc-split2_1shot-fine-tuning
+    In Collection: Attention RPN
+    Config: configs/detection/attention_rpn/coco/attention-rpn_r50_c4_voc-split2_1shot-fine-tuning.py
+    Metadata:
+      Training Data: VOC Split2 1shot
+    Results:
+      - Task: Few Shot Object Detection
+        Dataset: VOC
+        Metrics:
+          novel box AP50: 20.8
+    Weights: https://download.openmmlab.com/mmfewshot/detection/attention_rpn/voc/split2/attention-rpn_r50_c4_voc-split2_1shot-fine-tuning_20211108_011609-87114fa4.pth
+  - Name: attention_rpn_r50_c4_voc-split2_2shot-fine-tuning
+    In Collection: Attention RPN
+    Config: configs/detection/attention_rpn/coco/attention-rpn_r50_c4_voc-split2_2shot-fine-tuning.py
+    Metadata:
+      Training Data: VOC Split2 2shot
+    Results:
+      - Task: Few Shot Object Detection
+        Dataset: VOC
+        Metrics:
+          novel box AP50: 23.4
+    Weights: https://download.openmmlab.com/mmfewshot/detection/attention_rpn/voc/split2/attention-rpn_r50_c4_voc-split2_2shot-fine-tuning_20211108_014442-9043a914.pth
+  - Name: attention_rpn_r50_c4_voc-split2_3shot-fine-tuning
+    In Collection: Attention RPN
+    Config: configs/detection/attention_rpn/coco/attention-rpn_r50_c4_voc-split2_3shot-fine-tuning.py
+    Metadata:
+      Training Data: VOC Split2 3shot
+    Results:
+      - Task: Few Shot Object Detection
+        Dataset: VOC
+        Metrics:
+          novel box AP50: 35.9
+    Weights: https://download.openmmlab.com/mmfewshot/detection/attention_rpn/voc/split2/attention-rpn_r50_c4_voc-split2_3shot-fine-tuning_20211102_004726-dfd9d7bb.pth
+  - Name: attention_rpn_r50_c4_voc-split2_5shot-fine-tuning
+    In Collection: Attention RPN
+    Config: configs/detection/attention_rpn/coco/attention-rpn_r50_c4_voc-split2_5shot-fine-tuning.py
+    Metadata:
+      Training Data: VOC Split2 5shot
+    Results:
+      - Task: Few Shot Object Detection
+        Dataset: VOC
+        Metrics:
+          novel box AP50: 37.0
+    Weights: https://download.openmmlab.com/mmfewshot/detection/attention_rpn/voc/split2/attention-rpn_r50_c4_voc-split2_5shot-fine-tuning_20211102_011753-2ec1f244.pth
+  - Name: attention_rpn_r50_c4_voc-split2_10shot-fine-tuning
+    In Collection: Attention RPN
+    Config: configs/detection/attention_rpn/coco/attention-rpn_r50_c4_voc-split2_10shot-fine-tuning.py
+    Metadata:
+      Training Data: VOC Split2 10shot
+    Results:
+      - Task: Few Shot Object Detection
+        Dataset: VOC
+        Metrics:
+          novel box AP50: 43.3
+    Weights: https://download.openmmlab.com/mmfewshot/detection/attention_rpn/voc/split2/attention-rpn_r50_c4_voc-split2_10shot-fine-tuning_20211102_015202-e914016b.pth

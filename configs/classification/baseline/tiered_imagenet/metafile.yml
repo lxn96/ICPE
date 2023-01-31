@@ -1,0 +1,64 @@
+Collections:
+  - Name: Baseline
+    Metadata:
+      Training Data: Tiered-ImageNet
+      Training Techniques:
+        - SGD with Momentum
+        - Weight Decay
+      Training Resources: 1x V100 GPUs
+    Paper: https://arxiv.org/abs/1904.04232
+    README: configs/classification/baseline/README.md
+
+Models:
+  - Name: baseline_conv4_1xb64_tiered-imagenet_5way-1shot
+    Metadata:
+      Training Data: Tiered-ImageNet
+      Epochs: 100
+      Batch Size: 64
+    In Collection: Baseline
+    Results:
+      - Task: Few Shot Image Classification
+        Dataset: Tiered-ImageNet
+        Metrics:
+          Accuracy: 45.49
+    Weights: https://download.openmmlab.com/mmfewshot/classification/baseline/tiered_imagenet/baseline_conv4_1xb64_tiered-imagenet_5way-1shot_20211120_095923-e0b2cc06.pth
+    Config: configs/classification/baseline/tiered_imagenet/baseline_conv4_1xb64_tiered-imagenet_5way-1shot.py
+  - Name: baseline_conv4_1xb64_tiered-imagenet_5way-5shot
+    Metadata:
+      Training Data: Tiered-ImageNet
+      Epochs: 100
+      Batch Size: 64
+    In Collection: Baseline
+    Results:
+      - Task: Few Shot Image Classification
+        Dataset: Tiered-ImageNet
+        Metrics:
+          Accuracy: 66.48
+    Weights: https://download.openmmlab.com/mmfewshot/classification/baseline/tiered_imagenet/baseline_conv4_1xb64_tiered-imagenet_5way-1shot_20211120_095923-e0b2cc06.pth
+    Config: configs/classification/baseline/tiered_imagenet/baseline_conv4_1xb64_tiered-imagenet_5way-5shot.py
+  - Name: baseline_resnet12_1xb64_tiered-imagenet_5way-1shot
+    Metadata:
+      Training Data: Tiered-ImageNet
+      Epochs: 100
+      Batch Size: 64
+    In Collection: Baseline
+    Results:
+      - Task: Few Shot Image Classification
+        Dataset: Tiered-ImageNet
+        Metrics:
+          Accuracy: 66.11
+    Weights: https://download.openmmlab.com/mmfewshot/classification/baseline/tiered_imagenet/baseline_resnet12_1xb64_tiered-imagenet_5way-1shot_20211120_095923-17c5cf85.pth
+    Config: configs/classification/baseline/tiered_imagenet/baseline_resnet12_1xb64_tiered-imagenet_5way-1shot.py
+  - Name: baseline_resnet12_1xb64_tiered-imagenet_5way-5shot
+    Metadata:
+      Training Data: Tiered-ImageNet
+      Epochs: 100
+      Batch Size: 64
+    In Collection: Baseline
+    Results:
+      - Task: Few Shot Image Classification
+        Dataset: Tiered-ImageNet
+        Metrics:
+          Accuracy: 83.86
+    Weights: https://download.openmmlab.com/mmfewshot/classification/baseline/tiered_imagenet/baseline_resnet12_1xb64_tiered-imagenet_5way-1shot_20211120_095923-17c5cf85.pth
+    Config: configs/classification/baseline/tiered_imagenet/baseline_resnet12_1xb64_tiered-imagenet_5way-5shot.py

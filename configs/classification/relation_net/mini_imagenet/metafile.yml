@@ -1,0 +1,59 @@
+Collections:
+  - Name: Relation-Net
+    Metadata:
+      Training Data: Mini-ImageNet
+      Training Techniques:
+        - Adam
+      Training Resources: 1x V100 GPUs
+    Paper: https://arxiv.org/abs/1711.06025
+    README: configs/classification/relation_net/README.md
+
+Models:
+  - Name: relation-net_conv4_1xb105_mini-imagenet_5way-1shot
+    Metadata:
+      Training Data: Mini-ImageNet
+      Batch Size: 105
+    In Collection: Relation-Net
+    Results:
+      - Task: Few Shot Image Classification
+        Dataset: Mini-ImageNet
+        Metrics:
+          Accuracy: 49.69
+    Weights: https://download.openmmlab.com/mmfewshot/classification/relation_net/mini_imagenet/relation-net_conv4_1xb105_mini-imagenet_5way-1shot_20211120_105359-c4256d35.pth
+    Config: configs/classification/relation_net/mini_imagenet/relation-net_conv4_1xb105_mini-imagenet_5way-1shot.py
+  - Name: relation-net_conv4_1xb105_mini-imagenet_5way-5shot
+    Metadata:
+      Training Data: Mini-ImageNet
+      Batch Size: 105
+    In Collection: Relation-Net
+    Results:
+      - Task: Few Shot Image Classification
+        Dataset: Mini-ImageNet
+        Metrics:
+          Accuracy: 68.14
+    Weights: https://download.openmmlab.com/mmfewshot/classification/relation_net/mini_imagenet/relation-net_conv4_1xb105_mini-imagenet_5way-1shot_20211120_105359-c4256d35.pth
+    Config: configs/classification/relation_net/mini_imagenet/relation-net_conv4_1xb105_mini-imagenet_5way-5shot.py
+  - Name: relation-net_resnet12_1xb105_mini-imagenet_5way-1shot
+    Metadata:
+      Training Data: Mini-ImageNet
+      Batch Size: 105
+    In Collection: Relation-Net
+    Results:
+      - Task: Few Shot Image Classification
+        Dataset: Mini-ImageNet
+        Metrics:
+          Accuracy: 54.12
+    Weights: https://download.openmmlab.com/mmfewshot/classification/relation_net/mini_imagenet/relation-net_resnet12_1xb105_mini-imagenet_5way-1shot_20211120_110716-c73a3f81.pth
+    Config: configs/classification/relation_net/mini_imagenet/relation-net_resnet12_1xb105_mini-imagenet_5way-1shot.py
+  - Name: relation-net_resnet12_1xb105_mini-imagenet_5way-5shot
+    Metadata:
+      Training Data: Mini-ImageNet
+      Batch Size: 105
+    In Collection: Relation-Net
+    Results:
+      - Task: Few Shot Image Classification
+        Dataset: Mini-ImageNet
+        Metrics:
+          Accuracy: 71.31
+    Weights: https://download.openmmlab.com/mmfewshot/classification/relation_net/mini_imagenet/relation-net_resnet12_1xb105_mini-imagenet_5way-1shot_20211120_110716-c73a3f81.pth
+    Config: configs/classification/relation_net/mini_imagenet/relation-net_resnet12_1xb105_mini-imagenet_5way-5shot.py

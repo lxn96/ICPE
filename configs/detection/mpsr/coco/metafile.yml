@@ -1,0 +1,52 @@
+Collections:
+  - Name: MPSR
+    Metadata:
+      Training Data: COCO
+      Training Techniques:
+        - SGD with Momentum
+        - Weight Decay
+      Training Resources: 2x V100 GPUs
+      Batch Size: 2x2
+      Architecture:
+        - RPN
+        - FPN
+        - ResNet
+    Paper: https://arxiv.org/abs/2007.09384
+    README: configs/detection/meta_rcnn/README.md
+
+Models:
+  - Name: mpsr_r101_fpn_2xb2_coco_base-training
+    In Collection: MPSR
+    Config: configs/detection/mpsr/coco/mpsr_r101_fpn_2xb2_coco_base-training.py
+    Metadata:
+      Training Data: COCO Base Classes
+    Results:
+      - Task: Few Shot Object Detection
+        Dataset: COCO
+        Metrics:
+          base box AP: 34.6
+    Weights: https://download.openmmlab.com/mmfewshot/detection/mpsr/coco/mpsr_r101_fpn_2xb2_coco_base-training_20211103_164720-c6998b36.pth
+  - Name: mpsr_r101_fpn_2xb2_coco_10shot-fine-tuning
+    In Collection: MPSR
+    Config: configs/detection/mpsr/coco/mpsr_r101_fpn_2xb2_coco_10shot-fine-tuning.py
+    Metadata:
+      Training Data: COCO 10shot
+    Results:
+      - Task: Few Shot Object Detection
+        Dataset: COCO
+        Metrics:
+          base box AP: 23.2
+          novel box AP: 12.6
+    Weights: https://download.openmmlab.com/mmfewshot/detection/mpsr/coco/mpsr_r101_fpn_2xb2_coco_10shot-fine-tuning_20211104_161345-c4f1955a.pth
+  - Name: mpsr_r101_fpn_2xb2_coco_30shot-fine-tuning
+    In Collection: MPSR
+    Config: configs/detection/mpsr/coco/mpsr_r101_fpn_2xb2_coco_30shot-fine-tuning.py
+    Metadata:
+      Training Data: COCO 30shot
+    Results:
+      - Task: Few Shot Object Detection
+        Dataset: COCO
+        Metrics:
+          base box AP: 25.2
+          novel box AP: 18.1
+    Weights: https://download.openmmlab.com/mmfewshot/detection/mpsr/coco/mpsr_r101_fpn_2xb2_coco_30shot-fine-tuning_20211104_161611-fedc6a63.pth

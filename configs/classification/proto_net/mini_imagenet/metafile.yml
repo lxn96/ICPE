@@ -1,0 +1,59 @@
+Collections:
+  - Name: Proto-Net
+    Metadata:
+      Training Data: Mini-ImageNet
+      Training Techniques:
+        - Adam
+      Training Resources: 1x V100 GPUs
+    Paper: https://arxiv.org/abs/1703.05175
+    README: configs/classification/proto_net/README.md
+
+Models:
+  - Name: proto-net_conv4_1xb105_mini-imagenet_5way-1shot
+    Metadata:
+      Training Data: Mini-ImageNet
+      Batch Size: 105
+    In Collection: Proto-Net
+    Results:
+      - Task: Few Shot Image Classification
+        Dataset: Mini-ImageNet
+        Metrics:
+          Accuracy: 48.11
+    Weights: https://download.openmmlab.com/mmfewshot/classification/proto_net/mini_imagenet/proto-net_conv4_1xb105_mini-imagenet_5way-1shot_20211120_134319-646809cf.pth
+    Config: configs/classification/proto_net/mini_imagenet/proto-net_conv4_1xb105_mini-imagenet_5way-1shot.py
+  - Name: proto-net_conv4_1xb105_mini-imagenet_5way-5shot
+    Metadata:
+      Training Data: Mini-ImageNet
+      Batch Size: 105
+    In Collection: Proto-Net
+    Results:
+      - Task: Few Shot Image Classification
+        Dataset: Mini-ImageNet
+        Metrics:
+          Accuracy: 68.51
+    Weights: none
+    Config: configs/classification/proto_net/mini_imagenet/proto-net_conv4_1xb105_mini-imagenet_5way-5shot.py
+  - Name: proto-net_resnet12_1xb105_mini-imagenet_5way-1shot
+    Metadata:
+      Training Data: Mini-ImageNet
+      Batch Size: 105
+    In Collection: Proto-Net
+    Results:
+      - Task: Few Shot Image Classification
+        Dataset: Mini-ImageNet
+        Metrics:
+          Accuracy: 56.13
+    Weights: https://download.openmmlab.com/mmfewshot/classification/proto_net/mini_imagenet/proto-net_resnet12_1xb105_mini-imagenet_5way-1shot_20211120_134319-73173bee.pth
+    Config: configs/classification/proto_net/mini_imagenet/proto-net_resnet12_1xb105_mini-imagenet_5way-1shot.py
+  - Name: proto-net_resnet12_1xb105_mini-imagenet_5way-5shot
+    Metadata:
+      Training Data: Mini-ImageNet
+      Batch Size: 105
+    In Collection: Proto-Net
+    Results:
+      - Task: Few Shot Image Classification
+        Dataset: Mini-ImageNet
+        Metrics:
+          Accuracy: 75.7
+    Weights: https://download.openmmlab.com/mmfewshot/classification/proto_net/mini_imagenet/proto-net_resnet12_1xb105_mini-imagenet_5way-1shot_20211120_134319-73173bee.pth
+    Config: configs/classification/proto_net/mini_imagenet/proto-net_resnet12_1xb105_mini-imagenet_5way-5shot.py

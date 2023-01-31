@@ -1,0 +1,51 @@
+Collections:
+  - Name: FSCE
+    Metadata:
+      Training Data: COCO
+      Training Techniques:
+        - SGD with Momentum
+        - Weight Decay
+      Training Resources: 8x V100 GPUs
+      Architecture:
+        - RPN
+        - FPN
+        - ResNet
+    Paper: https://arxiv.org/abs/2103.05950
+    README: configs/detection/fsce/README.md
+
+Models:
+  - Name: fsce_r101_fpn_coco_base-training
+    In Collection: FSCE
+    Config: configs/detection/fsce/coco/fsce_r101_fpn_coco_base-training.py
+    Metadata:
+      Training Data: COCO Base Classes
+    Results:
+      - Task: Few Shot Object Detection
+        Dataset: COCO
+        Metrics:
+          base box AP: 39.50
+    Weights: https://download.openmmlab.com/mmfewshot/detection/tfa/voc/split1/tfa_r101_fpn_voc-split1_base-training_20211031_114821-efbd13e9.pth
+  - Name: fsce_r101_fpn_coco_10shot-fine-tuning
+    In Collection: FSCE
+    Config: configs/detection/fsce/coco/fsce_r101_fpn_coco_10shot-fine-tuning.py
+    Metadata:
+      Training Data: COCO 10shot
+    Results:
+      - Task: Few Shot Object Detection
+        Dataset: COCO
+        Metrics:
+          base box AP: 31.7
+          novel box AP: 11.7
+    Weights: https://download.openmmlab.com/mmfewshot/detection/fsce/coco/fsce_r101_fpn_coco_10shot-fine-tuning_20211103_120353-3baa63b5.pth
+  - Name: fsce_r101_fpn_coco_30shot-fine-tuning
+    In Collection: FSCE
+    Config: configs/detection/fsce/coco/fsce_r101_fpn_coco_30shot-fine-tuning.py
+    Metadata:
+      Training Data: COCO 30shot
+    Results:
+      - Task: Few Shot Object Detection
+        Dataset: COCO
+        Metrics:
+          base box AP: 32.3
+          novel box AP: 16.4
+    Weights: https://download.openmmlab.com/mmfewshot/detection/fsce/coco/fsce_r101_fpn_coco_30shot-fine-tuning_20211103_140559-42edb8b2.pth
